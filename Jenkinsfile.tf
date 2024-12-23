@@ -6,11 +6,12 @@ pipeline {
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Select the action to perform')
     }
 
-    environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
-        AWS_DEFAULT_REGION    = 'us-east-2'
-    }
+ # Configure the AWS Provider
+  provider "aws" {
+  region = var.region
+  access_key = "AKIAUBKFCRQ2DD3FJFW2"
+  secret_key = "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"
+}
 
     stages {
         stage('Checkout') {
