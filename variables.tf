@@ -32,6 +32,6 @@ variable "instance_type" {
 variable "name_tag" {
    type        = string
    description = "Name of the EC2 instance"
-   default     = ""
+   default     = "Terraform_ec2"
 #default     = "${params.EC2_NAME}"
 }
